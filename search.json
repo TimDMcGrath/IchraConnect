@@ -1,39 +1,88 @@
 [
   {
-    "objectID": "language_mapping.html",
-    "href": "language_mapping.html",
-    "title": "Language Mapping",
+    "objectID": "supported_additional_maintenance_reasons.html",
+    "href": "supported_additional_maintenance_reasons.html",
+    "title": "Supported Additional Maintenance Reasons",
     "section": "",
-    "text": "ISO 639 Value\nDescription\n\n\n\n\neng\nEnglish\n\n\nspa\nSpanish\n\n\nara\nArabic\n\n\nchi\nchinese\n\n\nfre\nFrench\n\n\ncpf\nFrench Creole\n\n\ndeu\nGerman\n\n\nguj\nGujarati\n\n\nhin\nHindi\n\n\nkor\nKorean\n\n\npol\nPolish\n\n\npor\nPortuguese\n\n\nrus\nRussian\n\n\ntgl\nTagalog\n\n\nurd\nUrdu\n\n\nvie\nVietnamese\n\n\neng\nOther",
+    "text": "Status Reason\n\n\n\n\nLEAVE_PLATFORM\n\n\nCOVERAGE_FROM_PARTNER\n\n\nMODIFICATION_TO_A_TERMINATED_PLAN\n\n\nHAS_MEDICAID_COVERAGE\n\n\nDIVORCE\n\n\nINITIAL_ENROLLMENT\n\n\nOSCAR_ERROR\n\n\nTERMINATION_OF_EMPLOYMENT\n\n\nCANCELLATION\n\n\nOUT_OF_AREA\n\n\nDOCTOR_NOT_IN_NETWORK\n\n\nOTHER\n\n\nOTHER_COVERAGE\n\n\nCOVERAGE_CONCLUDED\n\n\nOVERLAPPING_COVERAGE\n\n\nHAS_MEDICARE_COVERAGE\n\n\nRENEWAL_SWITCH\n\n\nAGE_OUT_26_YEARS_OLD\n\n\nREDUCTION_IN_HOURS\n\n\nPLAN_CHANGE\n\n\nFRAUD\n\n\nOUTREACH_FILE\n\n\nGROSS_MISCONDUCT\n\n\nMOVE_INTO_EXCHANGE_SERVICE_AREA\n\n\nNO_REASON_GIVEN\n\n\nCONVERSATION\n\n\nSTATE_CHANGE\n\n\nAGE_OUT_65_YEARS_OLD\n\n\nRE_ENROLLMENT\n\n\nFINANCIAL_CHANGE\n\n\nBENEFIT_SELECTION\n\n\nCORRESPONDENCE\n\n\nPAID\n\n\nCOVERAGE_FROM_EMPLOYER\n\n\nNEEDS_FOLLOWUP\n\n\nSEP_AUDIT\n\n\nCHANGE_OF_LOCATION\n\n\nEMPLOYEE_DEPARTURE\n\n\nMOVED_TO_NEW_LOCATION\n\n\nAGE_OUT_30_YEARS_OLD\n\n\nDEATH\n\n\nREINSTATED\n\n\nVOLUNTARY_WITHDRAWAL\n\n\nTERMINATION_OF_BENEFITS\n\n\nADDING_DEPENDENT\n\n\nNOT_PAID\n\n\nONE_TIME_REINSTATEMENT\n\n\nEXCHANGE_TRANSACTION",
     "crumbs": [
       "Oscar",
       "**CSV**",
       "**Other Specs**",
-      "Language Mapping"
+      "Supported Additional Maintenance Reasons"
     ]
   },
   {
-    "objectID": "outbound_reconcilliation_spec.html",
-    "href": "outbound_reconcilliation_spec.html",
-    "title": "Outbound Reconciliation Spec",
+    "objectID": "integrating_with_oscar.html",
+    "href": "integrating_with_oscar.html",
+    "title": "Integrating with Oscar",
     "section": "",
-    "text": "Field Name\nDataType\nDescription\nFormat\nExample\nLength\nRequired\n\n\n\n\noscar_member_id\nstring\n14-character Oscar ID\n14-character Oscar ID\nOSC12345678-01\n14\ny\n\n\nplatform_member_id\nstring\nPlatform-specified member ID\nvendor-specific\nvendor-specific\n\nn\n\n\nname_first\nstring\nMember's first name\nFirst\nJoe\n\ny\n\n\nname_last\nstring\nMembr's last name\nLast\nSchmoe\n\ny\n\n\nssn\nstring\n9-character member tax id\n9-character member tax id\n123456789\n9\nn\n\n\ncontract_id\nstring\nOscar internal contract_id UUID\nUUID\n\n\ny\n\n\ncoverage_start\nstring\nFirst day of coverage\nYYYY-MM-DD\n2024-01-01\n10\ny\n\n\ncoverage_end\nstring\nLast day of coverage\nYYYY-MM-DD\n2024-01-01\n10\ny\n\n\nexchange_status\nenum (on/off)\nIndicates if a member is enrolled on-exchange or off-exchange\nON, OFF\nOFF\n\ny\n\n\nplan_state\nstring\nUS state in which member is enrolled.\n2 digit state abbv.\nNY\n2\ny\n\n\neffectuated\nbool\nBoolean indicating if a member has paid their binder payment and is therefore effectuated (TRUE) or uneffectuated (FALSE).\nTRUE, FALSE\nTRUE\n\ny\n\n\neffectuation_date\nstring\nDate eligibility status became \"EFFECTUATED\"\nYYYY-MM-DD\n2024-01-01\n10\ny\n\n\npolicy_status\nenum\nIndicates the eligibility state of the member's health insurance policy.\nEFFECTUATED, UNEFFECTUATED, PRECOVERAGE_EFFECTUATED, GRACE_PERIOD, TERMINATED, CANCELLED, DELINQUENCY, POST_COVERAGE\nEFFECTUATED\n\ny\n\n\npolicy_status_reason\nstring\nStatus reason\nSee Supported Policy Status Reasons\nPaid\n\ny\n\n\nmonth\nstring\nThe month that premium and eligibility status applies to\nYYYY-MM-01\n2024-01-01\n10\ny\n\n\ntotal_premium\nstring\nTotal monthly premium for policy (member + aptc)\nValid decimal value\n999.99\n\ny\n\n\nmember_responsible\nstring\nMember's monthly premium owed\nValid decimal value\n999.99\n\ny\n\n\naptc\nstring\nAptc applied to policy, if applicable\nValid decimal value\n999.99\n\ny\n\n\nbalance\nstring\nMember's outstanding balance at time of file generation, including future 'UNPAID' charges\nValid decimal value\n999.99\n\ny\n\n\noldest_unpaid_due_date\nstring\nOldest unpaid due date\nYYYY-MM-DD\n2024-01-01\n10\ny\n\n\npast_due_balance\nstring\nSum of unpaid charges with a due date in the past\nValid decimal value\n999.99\n\ny\n\n\nemail\nstring\nMember's primary email\nemail@email.com\njoe.schmoe@gmail.com\n\nn\n\n\naddress\nstring\nMember's residential address\n\n123 Main St, Apt 3\n\ny\n\n\ncity\nstring\nMember's residential city\n\nAnytown\n\ny\n\n\nstate\nstring\nMember's residential state, 2 letter code\nXX\nNY\n2\ny\n\n\nzip\nstring\nMember's residential 5-digit zip code\n00000\n12345\n5\ny\n\n\npolicy_relation\nenum\nMember's policy relation\nSubscriber, Spouse, Child, Dependent, Unknown\nSubscriber\n\ny",
+    "text": "Oscar supports both the EDI and CSV integration standards. We expect ICHRA administrators to pick a standard and build out the integration with us.",
     "crumbs": [
       "Oscar",
-      "**CSV**",
-      "Outbound Reconciliation Spec"
+      "**Getting Started**",
+      "Integrating with Oscar"
     ]
   },
   {
-    "objectID": "outbound_enrollment_spec.html",
-    "href": "outbound_enrollment_spec.html",
-    "title": "Outbound Enrollment Spec",
+    "objectID": "integrating_with_oscar.html#standard-timeline",
+    "href": "integrating_with_oscar.html#standard-timeline",
+    "title": "Integrating with Oscar",
+    "section": "Standard Timeline",
+    "text": "Standard Timeline\nTimelines are based on Oscar standard ICHRA administrator integration as defined below. Any changes, updates, or deviations may incur additional time to launch. Timelines start when Oscar and platform agree to proceed with an integration.\n\n2-3 weeks: File spec & implementation alignment; security assessment; SFTP setup\n\n2-3 weeks: Build & integration configuration\n\n2-3 weeks: Data integration testing",
+    "crumbs": [
+      "Oscar",
+      "**Getting Started**",
+      "Integrating with Oscar"
+    ]
+  },
+  {
+    "objectID": "integrating_with_oscar.html#administrator-onboarding",
+    "href": "integrating_with_oscar.html#administrator-onboarding",
+    "title": "Integrating with Oscar",
+    "section": "Administrator Onboarding",
+    "text": "Administrator Onboarding\nTo set up an integration, Oscar requires the following from all administrator partners:\n\nSignature of an NDA and standard vendor and/or producer agreement with BAA\n\nSecurity assessment for SFTP setup, providing one of the following:\n\nSOC 2 Type 2 assessment report conducted within the last 36 months\n\nHITRUST certificate\n\nISO 27001 assessment report\n\nCompleted Oscar Vendor Security Assessment Questionnaire\n\nSFTP setup",
+    "crumbs": [
+      "Oscar",
+      "**Getting Started**",
+      "Integrating with Oscar"
+    ]
+  },
+  {
+    "objectID": "integrating_with_oscar.html#faqs",
+    "href": "integrating_with_oscar.html#faqs",
+    "title": "Integrating with Oscar",
+    "section": "FAQs",
+    "text": "FAQs\n\nWhat types of integrations does Oscar support for ICHRA administrators?\nFor off-exchange ICHRA enrollments, Oscar currently supports two main methods of integration for enrollment and payment data:\n\nDual-file EDI Integration\n\nEnrollment: Daily batch 834 EDI - inbound and outbound\n\nTA1/999 Acknowledgement & Error response\n\nCSV Reconciliation\n\n\nPayment: Batch 820 EDI for payment remittance with ACH direct deposit\nFor both the enrollment 834 EDI and 820 EDI implementation, we use the CMS implementation standards, with a modification to the 834 EDI standard to include employer information in the 2100D employer loop.\n\nCombined File CSV Integration\n\nSingle combined enrollment & payment CSV file - daily batch (Oscar Inbound)\n\nPayment instrument details (bank account information) is passed to Oscar with the enrollment data and binder payments and auto-payments are automatically enabled.\n\n\n\n\n\nOscar CSV Acknowledgement file - daily (Oscar Outbound)\n\nOscar CSV Enrollment Status file (Oscar Outbound)\n\n\nBoth implementations include error handling and both automated and manual reconciliation flows managed by our operations teams.\n\n\nCan I request changes to the integration specification?\nYes. We are open to making changes to the integration specification to support your requirements. Reach out to us to discuss further.\n\n\nDoes Oscar have a REST API I can use?\nWe plan on launching an external enrollment or payment REST API for administrators and carriers to leverage soon!\n\n\nWhat is the typical timeline for integration?\nOscar works with each ICHRA administrator directly to identify their unique integration needs. This process can vary depending on the complexity of your system and the method of integration chosen. On average, it can take anywhere from a few weeks to a couple of months.\n\n\nDoes Oscar accept credit or debit card information in the CSV enrollment file?\nOscar accepts ACH (Automated Clearinghouse) bank account numbers in the combined CSV enrollment and payment files.\n\n\nHow can I integrate my ICHRA administrator platform with Oscar?\nThanks for your interest in ICHRA at Oscar! Please reach out to ichra@hioscar.com to set up an integration or ask any other questions about ICHRA Connect.",
+    "crumbs": [
+      "Oscar",
+      "**Getting Started**",
+      "Integrating with Oscar"
+    ]
+  },
+  {
+    "objectID": "outbound_enrollment_ack_spec.html",
+    "href": "outbound_enrollment_ack_spec.html",
+    "title": "Outbound Enrollment Ack Spec",
     "section": "",
-    "text": "Field Name\nData Type\nDescription\nFormat\nExample\nRequired\n\n\n\n\nenrollment.external_contract_id\nstr\nThe policy ID issued by vendor\nVendor-specific\nVendor-specific\nN\n\n\nenrollment.application_id\nstr\nThe application ID issued by vendor\nVendor-specific\nVendor-specific\nN\n\n\nenrollment.total_premium\nstr\nThe total monthly premium for the contract\nValid decimal value\n999.99\nY\n\n\nenrollee.issuer_id\nstr\nThe member ID issued by issuer\nOSC#########-0#\nOSC123456789-01\nY\n\n\nenrollee.external_member_id\nstr\nThe member ID issued by vendor\nVendor-specific\nVendor-specific\nN\n\n\nenrollee.first_name\nstr\nMember's first name\nFIRST\nJOE\nY\n\n\nenrollee.last_name\nstr\nMember's last name\nLAST\nDOE\nY\n\n\nenrollee.dob\nstr\nMember's date of birth\nYYYY-MM-DD\n1990-01-01\nY\n\n\nenrollee.email\nstr\nMember's email address\nValid Email Format\njoe.doe@gmail.com\nY\n\n\nenrollee.coverage_start_date\ndate\nMember's policy coverage start date\nYYYY-MM-DD\n2024-01-01\nY\n\n\nenrollee.coverage_end_date\ndate\nMember's policy coverage end date\nYYYY-MM-DD\n2024-11-01\nN\n\n\nstatus\nenum\nThe current status of member.\nAvailable statuses:\nEFFECTUATED\nCANCELLED\nTERMINATED\nREINSTATED\nSTATUS\nTERMINATED\nY\n\n\nadditional_maintenance_reason\nstr\nReason for change to eligibility status\nREASON\nNOT_PAID\nN\n\n\noscar_internal_uuid\nstr\nUUID for Oscar internal use only.\n\n4a94a4f321484b71a2e2e7bafd2e4273\nN",
+    "text": "Field Name\nDataType\nDescription\nExample\nRequired\n\n\n\n\nrow_num\nint\nThe corresping line number in the inbound file\n11\nY\n\n\nexternal_contract_id\nString\nThe policy level ID(contract/enrollment) for that line number\nLeave blank if vendor doesn't have policy ID/enrollment ID\n22567\nN\n\n\napplication_id\nString\nThe application ID for that line number\n22567-ubt-1ba\nN\n\n\nresult\nENUM(A,R)\nThe result of parsing this line; A for accepted, R for rejected\nR\nY\n\n\nerror\nString\nThe description of parsing error. Blank if accepted.\nKeyerror on \"application_ID\"\nN",
     "crumbs": [
       "Oscar",
       "**CSV**",
-      "Outbound Enrollment Spec"
+      "Outbound Enrollment Ack Spec"
+    ]
+  },
+  {
+    "objectID": "ethnicity_code_mapping.html",
+    "href": "ethnicity_code_mapping.html",
+    "title": "Ethnicity Code Mapping",
+    "section": "",
+    "text": "CDC Value\nDescription\n\n\n\n\n2135-2\nHISPANIC_LATINO_OR_SPANISH_ORIGIN\n\n\n1002-5\nAMERICAN_INDIAN_OR_ALASKA_NATIVE\n\n\n2029-7\nASIAN_INDIAN\n\n\n2056-0\nBLACK_OR_AFRICAN_AMERICAN\n\n\n2034-7\nCHINESE\n\n\n2036-2\nFILIPINO\n\n\n2086-7\nGUAMANIAN_OR_CHAMORRO\n\n\n2039-6\nJAPANESE\n\n\n2040-4\nKOREAN\n\n\n2079-2\nNATIVE_HAWAIIAN\n\n\n2080-0\nSAMOAN\n\n\n2047-9\nVIETNAMESE\n\n\n2106-3\nWHITE\n\n\n2028-9\nASIAN_RACE_NOT_LISTED\n\n\n2500-7\nPACIFIC_ISLANDER_RACE_NOT_LISTED\n\n\n2131-1\nNOT_LISTED\n\n\n\nNULL",
+    "crumbs": [
+      "Oscar",
+      "**CSV**",
+      "**Other Specs**",
+      "Ethnicity Code Mapping"
     ]
   },
   {
@@ -48,29 +97,15 @@
     ]
   },
   {
-    "objectID": "file_specifications.html",
-    "href": "file_specifications.html",
-    "title": "File Specifications",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to ICHRA Connect Test",
     "section": "",
-    "text": "Format\nCSV\n\n\nMax File Size\n10000 rows\n\n\nInbound File Name\nFROM_VENDOR_NAME.EMT.YYYYMMDDThhmmss.P.csv\n\n\nAck File Name\nTO_VENDOR_NAME.ACK.YYYYMMDDThhmmss.P.csv\n\n\nOutbound File Name\nFROM_CARRIER.OUT.YYYYMMDDThhmmss.P.csv\n\n\nRecon File Name\nFROM_CARRIER_SNAPSHOT.OUT.YYYYMMDDThhmmss.P.csv\n\n\nDelivery Location\nTBD\n\n\nDelivery Schedule\nTBD\n\n\nNotes\nPlease include header as the first line",
+    "text": "ICHRA at Oscar\nAt Oscar, our mission is to make a healthier life accessible and affordable for all. We believe that a larger individual market is the best solution for Americans and view ICHRA (Individual Coverage Health Reimbursement Arrangement) as the future of health benefits. Just like the 401k revolutionized retirement planning, ICHRA is poised to transform health benefits by putting the individual in control, while also giving employers reduced and predictable healthcare costs. Demand and awareness are growing, and Oscar is paving the way for the future of ICHRA.\n\n\nWhy ICHRA?\nICHRA is a great option for both employers and employees, providing:\n\nFlexibility: Employers can tailor contributions to different classes of employees, providing a customizable approach to health benefits.\nAffordability: Employers have predictable costs by setting defined contribution amounts, avoiding the unpredictability of traditional group health insurance premiums.\nChoice: Employees can choose individual health plans that best meet their schedules, locations, and health needs, enhancing satisfaction and coverage suitability.\nPortability: Employees can keep their plan design, mid-year accumulations towards deductibles, and provider network, if and when they leave their employer.\n\n\n\n\nWhat is ICHRA Connect?\nICHRA Connect is an open source, universal, company-agnostic integration specification designed to reduce friction, encourage faster growth of the ICHRA market, and allow ICHRA administrators to integrate seamlessly with carriers. Oscar’s goal is to prove the viability of administrator-to-carrier interoperability and set a standard for a functioning ICHRA marketplace.\nICHRA Connect will streamline shopping, enrollment, billing, and other operational workflows to offer an ICHRA experience that rivals or surpasses traditional group plans. ICHRA Connect will standardize data reconciliation and eligibility updates, bringing ICHRA on par with group and on-exchange ACA experiences. Additionally, Oscar intends to establish shared data integration standards to enhance collaboration among ICHRA stakeholders and foster a more efficient market.\n\n\nOur Singular Focus\nWith ICHRA Connect, Oscar aims to create a shared technical infrastructure that enables carriers and administrators to work together to scale the ICHRA market.\n\n\nHow We’re Doing It\nOscar is developing an open integration specification to streamline ICHRA workflows, including:\n\nShopping & Enrollment\n\nEligibility\n\nBilling & Payment\n\nOther operational workflows necessary to offer an ICHRA experience that is on par or better than the group plan experience\n\nOscar understands that the landscape of health benefits, especially ICHRA, is constantly evolving. To stay ahead of these changes:\n\nOscar is developing specifications in collaboration with ICHRA administrators and other carriers through working groups.\nOscar’s standards will explicitly ensure that member data is easily reconcilable and that member eligibility status is as accurate as possible between vendors and carriers.\n\nOscar’s integration standards will continuously evolve to meet new challenges and opportunities.\n\nOscar plans to develop a RESTful API standard that will further streamline integrations, enhance interoperability, and provide a more seamless experience for all stakeholders involved in the ICHRA ecosystem.\n\n\n\nOpen Source\nThe ICHRA Connect integration specification is open source and licensed under a commercially permissive Apache 2.0 License. We welcome you to use the ICHRA Connect specification to power your data integration. You can also contribute bugs, feature, and improvements by joining our working group or filing an Issue in our Github repo. The source code for this website and the specifications can be found at github.com/oscarhealth/IchraConnect\n\n\nHow to Integrate with Oscar\nIf you’re interested in setting up an ICHRA integration with Oscar, please reach out to ichra@hioscar.com for more information or see our high-level overview and technical specifications for ICHRA integrations.\n\n\n\nAdopt the ICHRA Connect Specification\n\n\nIf you are a carrier interested in modifying or adopting the ICHRA Connect integration specifications, please reach out to join our working groups.\n\nContact Us",
     "crumbs": [
       "Oscar",
-      "**CSV**",
-      "**Other Specs**",
-      "File Specifications"
-    ]
-  },
-  {
-    "objectID": "marital_status_mapping.html",
-    "href": "marital_status_mapping.html",
-    "title": "Marital Status Mapping",
-    "section": "",
-    "text": "ASC X12 Value\nDescription\n\n\n\n\nB\nREGISTERED_DOMESTIC_PARTNER\n\n\nD\nDIVORCED\n\n\nI\nSINGLE\n\n\nM\nMARRIED\n\n\nR\nUNKNOWN_MARITAL_STATUS\n\n\nS\nLEGALLY_SEPARATED\n\n\nU\nUNMARRIED\n\n\nW\nWIDOWED\n\n\nX\nLEGALLY_SEPARATED",
-    "crumbs": [
-      "Oscar",
-      "**CSV**",
-      "**Other Specs**",
-      "Marital Status Mapping"
+      "**Getting Started**",
+      "Welcome to ICHRA Connect Test"
     ]
   },
   {
@@ -87,6 +122,32 @@
     ]
   },
   {
+    "objectID": "language_mapping.html",
+    "href": "language_mapping.html",
+    "title": "Language Mapping",
+    "section": "",
+    "text": "ISO 639 Value\nDescription\n\n\n\n\neng\nEnglish\n\n\nspa\nSpanish\n\n\nara\nArabic\n\n\nchi\nchinese\n\n\nfre\nFrench\n\n\ncpf\nFrench Creole\n\n\ndeu\nGerman\n\n\nguj\nGujarati\n\n\nhin\nHindi\n\n\nkor\nKorean\n\n\npol\nPolish\n\n\npor\nPortuguese\n\n\nrus\nRussian\n\n\ntgl\nTagalog\n\n\nurd\nUrdu\n\n\nvie\nVietnamese\n\n\neng\nOther",
+    "crumbs": [
+      "Oscar",
+      "**CSV**",
+      "**Other Specs**",
+      "Language Mapping"
+    ]
+  },
+  {
+    "objectID": "file_specifications.html",
+    "href": "file_specifications.html",
+    "title": "File Specifications",
+    "section": "",
+    "text": "Format\nCSV\n\n\nMax File Size\n10000 rows\n\n\nInbound File Name\nFROM_VENDOR_NAME.EMT.YYYYMMDDThhmmss.P.csv\n\n\nAck File Name\nTO_VENDOR_NAME.ACK.YYYYMMDDThhmmss.P.csv\n\n\nOutbound File Name\nFROM_CARRIER.OUT.YYYYMMDDThhmmss.P.csv\n\n\nRecon File Name\nFROM_CARRIER_SNAPSHOT.OUT.YYYYMMDDThhmmss.P.csv\n\n\nDelivery Location\nTBD\n\n\nDelivery Schedule\nTBD\n\n\nNotes\nPlease include header as the first line",
+    "crumbs": [
+      "Oscar",
+      "**CSV**",
+      "**Other Specs**",
+      "File Specifications"
+    ]
+  },
+  {
     "objectID": "relationship_code_mapping.html",
     "href": "relationship_code_mapping.html",
     "title": "Relationship Code Mapping",
@@ -97,19 +158,6 @@
       "**CSV**",
       "**Other Specs**",
       "Relationship Code Mapping"
-    ]
-  },
-  {
-    "objectID": "supported_additional_maintenance_reasons.html",
-    "href": "supported_additional_maintenance_reasons.html",
-    "title": "Supported Additional Maintenance Reasons",
-    "section": "",
-    "text": "Status Reason\n\n\n\n\nLEAVE_PLATFORM\n\n\nCOVERAGE_FROM_PARTNER\n\n\nMODIFICATION_TO_A_TERMINATED_PLAN\n\n\nHAS_MEDICAID_COVERAGE\n\n\nDIVORCE\n\n\nINITIAL_ENROLLMENT\n\n\nOSCAR_ERROR\n\n\nTERMINATION_OF_EMPLOYMENT\n\n\nCANCELLATION\n\n\nOUT_OF_AREA\n\n\nDOCTOR_NOT_IN_NETWORK\n\n\nOTHER\n\n\nOTHER_COVERAGE\n\n\nCOVERAGE_CONCLUDED\n\n\nOVERLAPPING_COVERAGE\n\n\nHAS_MEDICARE_COVERAGE\n\n\nRENEWAL_SWITCH\n\n\nAGE_OUT_26_YEARS_OLD\n\n\nREDUCTION_IN_HOURS\n\n\nPLAN_CHANGE\n\n\nFRAUD\n\n\nOUTREACH_FILE\n\n\nGROSS_MISCONDUCT\n\n\nMOVE_INTO_EXCHANGE_SERVICE_AREA\n\n\nNO_REASON_GIVEN\n\n\nCONVERSATION\n\n\nSTATE_CHANGE\n\n\nAGE_OUT_65_YEARS_OLD\n\n\nRE_ENROLLMENT\n\n\nFINANCIAL_CHANGE\n\n\nBENEFIT_SELECTION\n\n\nCORRESPONDENCE\n\n\nPAID\n\n\nCOVERAGE_FROM_EMPLOYER\n\n\nNEEDS_FOLLOWUP\n\n\nSEP_AUDIT\n\n\nCHANGE_OF_LOCATION\n\n\nEMPLOYEE_DEPARTURE\n\n\nMOVED_TO_NEW_LOCATION\n\n\nAGE_OUT_30_YEARS_OLD\n\n\nDEATH\n\n\nREINSTATED\n\n\nVOLUNTARY_WITHDRAWAL\n\n\nTERMINATION_OF_BENEFITS\n\n\nADDING_DEPENDENT\n\n\nNOT_PAID\n\n\nONE_TIME_REINSTATEMENT\n\n\nEXCHANGE_TRANSACTION",
-    "crumbs": [
-      "Oscar",
-      "**CSV**",
-      "**Other Specs**",
-      "Supported Additional Maintenance Reasons"
     ]
   },
   {
@@ -185,63 +233,28 @@
     ]
   },
   {
-    "objectID": "outbound_enrollment_ack_spec.html",
-    "href": "outbound_enrollment_ack_spec.html",
-    "title": "Outbound Enrollment Ack Spec",
+    "objectID": "outbound_reconcilliation_spec.html",
+    "href": "outbound_reconcilliation_spec.html",
+    "title": "Outbound Reconciliation Spec",
     "section": "",
-    "text": "Field Name\nDataType\nDescription\nExample\nRequired\n\n\n\n\nrow_num\nint\nThe corresping line number in the inbound file\n11\nY\n\n\nexternal_contract_id\nString\nThe policy level ID(contract/enrollment) for that line number\nLeave blank if vendor doesn't have policy ID/enrollment ID\n22567\nN\n\n\napplication_id\nString\nThe application ID for that line number\n22567-ubt-1ba\nN\n\n\nresult\nENUM(A,R)\nThe result of parsing this line; A for accepted, R for rejected\nR\nY\n\n\nerror\nString\nThe description of parsing error. Blank if accepted.\nKeyerror on \"application_ID\"\nN",
+    "text": "Field Name\nDataType\nDescription\nFormat\nExample\nLength\nRequired\n\n\n\n\noscar_member_id\nstring\n14-character Oscar ID\n14-character Oscar ID\nOSC12345678-01\n14\ny\n\n\nplatform_member_id\nstring\nPlatform-specified member ID\nvendor-specific\nvendor-specific\n\nn\n\n\nname_first\nstring\nMember's first name\nFirst\nJoe\n\ny\n\n\nname_last\nstring\nMembr's last name\nLast\nSchmoe\n\ny\n\n\nssn\nstring\n9-character member tax id\n9-character member tax id\n123456789\n9\nn\n\n\ncontract_id\nstring\nOscar internal contract_id UUID\nUUID\n\n\ny\n\n\ncoverage_start\nstring\nFirst day of coverage\nYYYY-MM-DD\n2024-01-01\n10\ny\n\n\ncoverage_end\nstring\nLast day of coverage\nYYYY-MM-DD\n2024-01-01\n10\ny\n\n\nexchange_status\nenum (on/off)\nIndicates if a member is enrolled on-exchange or off-exchange\nON, OFF\nOFF\n\ny\n\n\nplan_state\nstring\nUS state in which member is enrolled.\n2 digit state abbv.\nNY\n2\ny\n\n\neffectuated\nbool\nBoolean indicating if a member has paid their binder payment and is therefore effectuated (TRUE) or uneffectuated (FALSE).\nTRUE, FALSE\nTRUE\n\ny\n\n\neffectuation_date\nstring\nDate eligibility status became \"EFFECTUATED\"\nYYYY-MM-DD\n2024-01-01\n10\ny\n\n\npolicy_status\nenum\nIndicates the eligibility state of the member's health insurance policy.\nEFFECTUATED, UNEFFECTUATED, PRECOVERAGE_EFFECTUATED, GRACE_PERIOD, TERMINATED, CANCELLED, DELINQUENCY, POST_COVERAGE\nEFFECTUATED\n\ny\n\n\npolicy_status_reason\nstring\nStatus reason\nSee Supported Policy Status Reasons\nPaid\n\ny\n\n\nmonth\nstring\nThe month that premium and eligibility status applies to\nYYYY-MM-01\n2024-01-01\n10\ny\n\n\ntotal_premium\nstring\nTotal monthly premium for policy (member + aptc)\nValid decimal value\n999.99\n\ny\n\n\nmember_responsible\nstring\nMember's monthly premium owed\nValid decimal value\n999.99\n\ny\n\n\naptc\nstring\nAptc applied to policy, if applicable\nValid decimal value\n999.99\n\ny\n\n\nbalance\nstring\nMember's outstanding balance at time of file generation, including future 'UNPAID' charges\nValid decimal value\n999.99\n\ny\n\n\noldest_unpaid_due_date\nstring\nOldest unpaid due date\nYYYY-MM-DD\n2024-01-01\n10\ny\n\n\npast_due_balance\nstring\nSum of unpaid charges with a due date in the past\nValid decimal value\n999.99\n\ny\n\n\nemail\nstring\nMember's primary email\nemail@email.com\njoe.schmoe@gmail.com\n\nn\n\n\naddress\nstring\nMember's residential address\n\n123 Main St, Apt 3\n\ny\n\n\ncity\nstring\nMember's residential city\n\nAnytown\n\ny\n\n\nstate\nstring\nMember's residential state, 2 letter code\nXX\nNY\n2\ny\n\n\nzip\nstring\nMember's residential 5-digit zip code\n00000\n12345\n5\ny\n\n\npolicy_relation\nenum\nMember's policy relation\nSubscriber, Spouse, Child, Dependent, Unknown\nSubscriber\n\ny",
     "crumbs": [
       "Oscar",
       "**CSV**",
-      "Outbound Enrollment Ack Spec"
+      "Outbound Reconciliation Spec"
     ]
   },
   {
-    "objectID": "integrating_with_oscar.html",
-    "href": "integrating_with_oscar.html",
-    "title": "Integrating with Oscar",
+    "objectID": "marital_status_mapping.html",
+    "href": "marital_status_mapping.html",
+    "title": "Marital Status Mapping",
     "section": "",
-    "text": "Oscar supports both the EDI and CSV integration standards. We expect ICHRA administrators to pick a standard and build out the integration with us.",
+    "text": "ASC X12 Value\nDescription\n\n\n\n\nB\nREGISTERED_DOMESTIC_PARTNER\n\n\nD\nDIVORCED\n\n\nI\nSINGLE\n\n\nM\nMARRIED\n\n\nR\nUNKNOWN_MARITAL_STATUS\n\n\nS\nLEGALLY_SEPARATED\n\n\nU\nUNMARRIED\n\n\nW\nWIDOWED\n\n\nX\nLEGALLY_SEPARATED",
     "crumbs": [
       "Oscar",
-      "**Getting Started**",
-      "Integrating with Oscar"
-    ]
-  },
-  {
-    "objectID": "integrating_with_oscar.html#standard-timeline",
-    "href": "integrating_with_oscar.html#standard-timeline",
-    "title": "Integrating with Oscar",
-    "section": "Standard Timeline",
-    "text": "Standard Timeline\nTimelines are based on Oscar standard ICHRA administrator integration as defined below. Any changes, updates, or deviations may incur additional time to launch. Timelines start when Oscar and platform agree to proceed with an integration.\n\n2-3 weeks: File spec & implementation alignment; security assessment; SFTP setup\n\n2-3 weeks: Build & integration configuration\n\n2-3 weeks: Data integration testing",
-    "crumbs": [
-      "Oscar",
-      "**Getting Started**",
-      "Integrating with Oscar"
-    ]
-  },
-  {
-    "objectID": "integrating_with_oscar.html#administrator-onboarding",
-    "href": "integrating_with_oscar.html#administrator-onboarding",
-    "title": "Integrating with Oscar",
-    "section": "Administrator Onboarding",
-    "text": "Administrator Onboarding\nTo set up an integration, Oscar requires the following from all administrator partners:\n\nSignature of an NDA and standard vendor and/or producer agreement with BAA\n\nSecurity assessment for SFTP setup, providing one of the following:\n\nSOC 2 Type 2 assessment report conducted within the last 36 months\n\nHITRUST certificate\n\nISO 27001 assessment report\n\nCompleted Oscar Vendor Security Assessment Questionnaire\n\nSFTP setup",
-    "crumbs": [
-      "Oscar",
-      "**Getting Started**",
-      "Integrating with Oscar"
-    ]
-  },
-  {
-    "objectID": "integrating_with_oscar.html#faqs",
-    "href": "integrating_with_oscar.html#faqs",
-    "title": "Integrating with Oscar",
-    "section": "FAQs",
-    "text": "FAQs\n\nWhat types of integrations does Oscar support for ICHRA administrators?\nFor off-exchange ICHRA enrollments, Oscar currently supports two main methods of integration for enrollment and payment data:\n\nDual-file EDI Integration\n\nEnrollment: Daily batch 834 EDI - inbound and outbound\n\nTA1/999 Acknowledgement & Error response\n\nCSV Reconciliation\n\n\nPayment: Batch 820 EDI for payment remittance with ACH direct deposit\nFor both the enrollment 834 EDI and 820 EDI implementation, we use the CMS implementation standards, with a modification to the 834 EDI standard to include employer information in the 2100D employer loop.\n\nCombined File CSV Integration\n\nSingle combined enrollment & payment CSV file - daily batch (Oscar Inbound)\n\nPayment instrument details (bank account information) is passed to Oscar with the enrollment data and binder payments and auto-payments are automatically enabled.\n\n\n\n\n\nOscar CSV Acknowledgement file - daily (Oscar Outbound)\n\nOscar CSV Enrollment Status file (Oscar Outbound)\n\n\nBoth implementations include error handling and both automated and manual reconciliation flows managed by our operations teams.\n\n\nCan I request changes to the integration specification?\nYes. We are open to making changes to the integration specification to support your requirements. Reach out to us to discuss further.\n\n\nDoes Oscar have a REST API I can use?\nWe plan on launching an external enrollment or payment REST API for administrators and carriers to leverage soon!\n\n\nWhat is the typical timeline for integration?\nOscar works with each ICHRA administrator directly to identify their unique integration needs. This process can vary depending on the complexity of your system and the method of integration chosen. On average, it can take anywhere from a few weeks to a couple of months.\n\n\nDoes Oscar accept credit or debit card information in the CSV enrollment file?\nOscar accepts ACH (Automated Clearinghouse) bank account numbers in the combined CSV enrollment and payment files.\n\n\nHow can I integrate my ICHRA administrator platform with Oscar?\nThanks for your interest in ICHRA at Oscar! Please reach out to ichra@hioscar.com to set up an integration or ask any other questions about ICHRA Connect.",
-    "crumbs": [
-      "Oscar",
-      "**Getting Started**",
-      "Integrating with Oscar"
+      "**CSV**",
+      "**Other Specs**",
+      "Marital Status Mapping"
     ]
   },
   {
@@ -281,6 +294,13 @@
     ]
   },
   {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "ICHRA Connect",
+    "section": "",
+    "text": "Copyright 2024 Oscar Management Corporation\nLicensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+  },
+  {
     "objectID": "inbound_enrollment_spec.html",
     "href": "inbound_enrollment_spec.html",
     "title": "Inbound Enrollment Spec",
@@ -293,35 +313,15 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to ICHRA Connect",
+    "objectID": "outbound_enrollment_spec.html",
+    "href": "outbound_enrollment_spec.html",
+    "title": "Outbound Enrollment Spec",
     "section": "",
-    "text": "ICHRA at Oscar\nAt Oscar, our mission is to make a healthier life accessible and affordable for all. We believe that a larger individual market is the best solution for Americans and view ICHRA (Individual Coverage Health Reimbursement Arrangement) as the future of health benefits. Just like the 401k revolutionized retirement planning, ICHRA is poised to transform health benefits by putting the individual in control, while also giving employers reduced and predictable healthcare costs. Demand and awareness are growing, and Oscar is paving the way for the future of ICHRA.\n\n\nWhy ICHRA?\nICHRA is a great option for both employers and employees, providing:\n\nFlexibility: Employers can tailor contributions to different classes of employees, providing a customizable approach to health benefits.\nAffordability: Employers have predictable costs by setting defined contribution amounts, avoiding the unpredictability of traditional group health insurance premiums.\nChoice: Employees can choose individual health plans that best meet their schedules, locations, and health needs, enhancing satisfaction and coverage suitability.\nPortability: Employees can keep their plan design, mid-year accumulations towards deductibles, and provider network, if and when they leave their employer.\n\n\n\n\nWhat is ICHRA Connect?\nICHRA Connect is an open source, universal, company-agnostic integration specification designed to reduce friction, encourage faster growth of the ICHRA market, and allow ICHRA administrators to integrate seamlessly with carriers. Oscar’s goal is to prove the viability of administrator-to-carrier interoperability and set a standard for a functioning ICHRA marketplace.\nICHRA Connect will streamline shopping, enrollment, billing, and other operational workflows to offer an ICHRA experience that rivals or surpasses traditional group plans. ICHRA Connect will standardize data reconciliation and eligibility updates, bringing ICHRA on par with group and on-exchange ACA experiences. Additionally, Oscar intends to establish shared data integration standards to enhance collaboration among ICHRA stakeholders and foster a more efficient market.\n\n\nOur Singular Focus\nWith ICHRA Connect, Oscar aims to create a shared technical infrastructure that enables carriers and administrators to work together to scale the ICHRA market.\n\n\nHow We’re Doing It\nOscar is developing an open integration specification to streamline ICHRA workflows, including:\n\nShopping & Enrollment\n\nEligibility\n\nBilling & Payment\n\nOther operational workflows necessary to offer an ICHRA experience that is on par or better than the group plan experience\n\nOscar understands that the landscape of health benefits, especially ICHRA, is constantly evolving. To stay ahead of these changes:\n\nOscar is developing specifications in collaboration with ICHRA administrators and other carriers through working groups.\nOscar’s standards will explicitly ensure that member data is easily reconcilable and that member eligibility status is as accurate as possible between vendors and carriers.\n\nOscar’s integration standards will continuously evolve to meet new challenges and opportunities.\n\nOscar plans to develop a RESTful API standard that will further streamline integrations, enhance interoperability, and provide a more seamless experience for all stakeholders involved in the ICHRA ecosystem.\n\n\n\nOpen Source\nThe ICHRA Connect integration specification is open source and licensed under a commercially permissive Apache 2.0 License. We welcome you to use the ICHRA Connect specification to power your data integration. You can also contribute bugs, feature, and improvements by joining our working group or filing an Issue in our Github repo. The source code for this website and the specifications can be found at github.com/oscarhealth/IchraConnect\n\n\nHow to Integrate with Oscar\nIf you’re interested in setting up an ICHRA integration with Oscar, please reach out to ichra@hioscar.com for more information or see our high-level overview and technical specifications for ICHRA integrations.\n\n\n\nAdopt the ICHRA Connect Specification\n\n\nIf you are a carrier interested in modifying or adopting the ICHRA Connect integration specifications, please reach out to join our working groups.\n\nContact Us",
-    "crumbs": [
-      "Oscar",
-      "**Getting Started**",
-      "Welcome to ICHRA Connect"
-    ]
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "ICHRA Connect",
-    "section": "",
-    "text": "Copyright 2024 Oscar Management Corporation\nLicensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
-  },
-  {
-    "objectID": "ethnicity_code_mapping.html",
-    "href": "ethnicity_code_mapping.html",
-    "title": "Ethnicity Code Mapping",
-    "section": "",
-    "text": "CDC Value\nDescription\n\n\n\n\n2135-2\nHISPANIC_LATINO_OR_SPANISH_ORIGIN\n\n\n1002-5\nAMERICAN_INDIAN_OR_ALASKA_NATIVE\n\n\n2029-7\nASIAN_INDIAN\n\n\n2056-0\nBLACK_OR_AFRICAN_AMERICAN\n\n\n2034-7\nCHINESE\n\n\n2036-2\nFILIPINO\n\n\n2086-7\nGUAMANIAN_OR_CHAMORRO\n\n\n2039-6\nJAPANESE\n\n\n2040-4\nKOREAN\n\n\n2079-2\nNATIVE_HAWAIIAN\n\n\n2080-0\nSAMOAN\n\n\n2047-9\nVIETNAMESE\n\n\n2106-3\nWHITE\n\n\n2028-9\nASIAN_RACE_NOT_LISTED\n\n\n2500-7\nPACIFIC_ISLANDER_RACE_NOT_LISTED\n\n\n2131-1\nNOT_LISTED\n\n\n\nNULL",
+    "text": "Field Name\nData Type\nDescription\nFormat\nExample\nRequired\n\n\n\n\nenrollment.external_contract_id\nstr\nThe policy ID issued by vendor\nVendor-specific\nVendor-specific\nN\n\n\nenrollment.application_id\nstr\nThe application ID issued by vendor\nVendor-specific\nVendor-specific\nN\n\n\nenrollment.total_premium\nstr\nThe total monthly premium for the contract\nValid decimal value\n999.99\nY\n\n\nenrollee.issuer_id\nstr\nThe member ID issued by issuer\nOSC#########-0#\nOSC123456789-01\nY\n\n\nenrollee.external_member_id\nstr\nThe member ID issued by vendor\nVendor-specific\nVendor-specific\nN\n\n\nenrollee.first_name\nstr\nMember's first name\nFIRST\nJOE\nY\n\n\nenrollee.last_name\nstr\nMember's last name\nLAST\nDOE\nY\n\n\nenrollee.dob\nstr\nMember's date of birth\nYYYY-MM-DD\n1990-01-01\nY\n\n\nenrollee.email\nstr\nMember's email address\nValid Email Format\njoe.doe@gmail.com\nY\n\n\nenrollee.coverage_start_date\ndate\nMember's policy coverage start date\nYYYY-MM-DD\n2024-01-01\nY\n\n\nenrollee.coverage_end_date\ndate\nMember's policy coverage end date\nYYYY-MM-DD\n2024-11-01\nN\n\n\nstatus\nenum\nThe current status of member.\nAvailable statuses:\nEFFECTUATED\nCANCELLED\nTERMINATED\nREINSTATED\nSTATUS\nTERMINATED\nY\n\n\nadditional_maintenance_reason\nstr\nReason for change to eligibility status\nREASON\nNOT_PAID\nN\n\n\noscar_internal_uuid\nstr\nUUID for Oscar internal use only.\n\n4a94a4f321484b71a2e2e7bafd2e4273\nN",
     "crumbs": [
       "Oscar",
       "**CSV**",
-      "**Other Specs**",
-      "Ethnicity Code Mapping"
+      "Outbound Enrollment Spec"
     ]
   }
 ]
